@@ -221,7 +221,7 @@ RCT_EXPORT_METHOD(openCamera:(NSDictionary *)options
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:[self waitAnimationEnd:^{
-        self.reject(ERROR_PICKER_CANCEL_KEY, ERROR_PICKER_CANCEL_MSG, nil);
+        // self.reject(ERROR_PICKER_CANCEL_KEY, ERROR_PICKER_CANCEL_MSG, nil);
     }]];
 }
 
@@ -714,7 +714,7 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
 
 - (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController {
     [imagePickerController dismissViewControllerAnimated:YES completion:[self waitAnimationEnd:^{
-        self.reject(ERROR_PICKER_CANCEL_KEY, ERROR_PICKER_CANCEL_MSG, nil);
+        // self.reject(ERROR_PICKER_CANCEL_KEY, ERROR_PICKER_CANCEL_MSG, nil);
     }]];
 }
 
@@ -903,7 +903,7 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
 - (void)cropViewController:(TOCropViewController *)cropViewController didFinishCancelled:(BOOL)cancelled {
     [self dismissCropper:cropViewController selectionDone:NO completion:[self waitAnimationEnd:^{
         if (self.currentSelectionMode == CROPPING) {
-            self.reject(ERROR_PICKER_CANCEL_KEY, ERROR_PICKER_CANCEL_MSG, nil);
+            // self.reject(ERROR_PICKER_CANCEL_KEY, ERROR_PICKER_CANCEL_MSG, nil);
         }
     }]];
 }
